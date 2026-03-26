@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- OGP（LINE・SNS用） -->
+<meta property="og:title" content="SUMAP | 須磨海岸 SUP体験">
+<meta property="og:description" content="手ぶらOK！少人数制！須磨海岸で気軽にSUP体験しよう">
+<meta property="og:image" content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+<meta property="og:url" content="https://あなたのサイトURL.com">
+<meta property="og:type" content="website">
+
+<!-- Twitter用（LINEにも効くことあり） -->
+<meta name="twitter:card" content="summary_large_image">
+<title>SUMAP | 須磨海岸 SUP体験</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #333;
+  background: #f7fbff;
+}
+
+/* ===== ヒーロー ===== */
+header {
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: white;
+}
+
+/* ロゴをページ上端中央に固定 */
+.header-logo {
+  width: 200px;        /* ロゴサイズ */
+  margin-top: 10px;   /* 上端から少し余白 */
+  animation: float 4s ease-in-out infinite;
+  z-index: 10;
+}
+
+/* ヒーロー内文字 */
+.hero-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background: #00aaff;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+/* ===== セクション共通 ===== */
+section {
+  padding: 60px 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+}
+
+/* ===== プラン（横スクロール） ===== */
+.plan-scroll {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.plan-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.plan-card {
+  min-width: 75%;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  position: relative;
+  transition: 0.3s;
+}
+
+.plan-card:active {
+  transform: scale(0.96);
+}
+
+.plan-tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #00aaff;
+  color: white;
+  font-size: 0.7rem;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.price {
+  margin-top: 15px;
+  font-size: 1.4rem;
+  color: #00aaff;
+  font-weight: bold;
+}
+
+/* ===== 流れ（タイムライン） ===== */
+.flow {
+  background: #f0f8ff;
+}
+
+.timeline {
+  position: relative;
+  margin-left: 10px;
+  padding-left: 20px;
+  border-left: 2px solid #00aaff;
+}
+
+.step {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.step span {
+  position: absolute;
+  left: -18px;
+  top: 0;
+  background: #00aaff;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step p {
+  background: white;
+  padding: 12px 15px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* ===== CTA固定ボタン ===== */
+.fixed-btn {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #00aaff;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+/* ===== フッター ===== */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: #111;
+  color: #aaa;
+  font-size: 0.8rem;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <!-- ページ上端の中央にロゴ -->
+  <img src="images/sumap.png" alt="SUMAPロゴ" class="header-logo">
+
+  <!-- ヒーロー文字・ボタン -->
+  <div class="hero-inner">
+    <h1>SUMAP</h1>
+    <p>須磨海岸でSUP体験しよう</p>
+    <a href="#plan" class="btn">プランを見る</a>
+  </div>
+</header>
+
+<section id="plan">
+  <h2 class="section-title">プラン</h2>
+
+  <div class="plan-scroll">
+    <a href="trial.html" class="plan-card">
+      <div class="plan-tag">初心者OK</div>
+      <h3>体験コース</h3>
+      <p>気軽にSUPを楽しめる人気プラン</p>
+      <div class="price">¥4,000</div>
+    </a>
+
+    <a href="lesson.html" class="plan-card">
+      <div class="plan-tag">スキルアップ</div>
+      <h3>レッスンコース</h3>
+      <p>しっかり上達したい方向け</p>
+      <div class="price">¥6,000</div>
+    </a>
+  </div>
+</section>
+
+<section class="flow">
+  <h2 class="section-title">体験の流れ</h2>
+
+  <div class="timeline">
+    <div class="step">
+      <span>1</span>
+      <p>受付・着替え</p>
+    </div>
+    <div class="step">
+      <span>2</span>
+      <p>陸上レクチャー</p>
+    </div>
+    <div class="step">
+      <span>3</span>
+      <p>SUP体験スタート</p>
+    </div>
+    <div class="step">
+      <span>4</span>
+      <p>自由時間・写真撮影</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">予約・お問い合わせ</h2>
+  <p style="text-align:center; margin-bottom:20px;">
+    LINEまたはメールでご予約ください
+  </p>
+  <div style="text-align:center;">
+    <a href="#" class="btn">予約する</a>
+  </div>
+</section>
+
+<a href="#" class="fixed-btn">今すぐ予約</a>
+
+<footer>
+  © 2026 SUMAP All Rights Reserved.
+</footer>
+
+</body>
+</html>
